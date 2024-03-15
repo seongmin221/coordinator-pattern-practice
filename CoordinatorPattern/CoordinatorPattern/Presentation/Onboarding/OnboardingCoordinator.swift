@@ -1,17 +1,17 @@
 //
-//  FirstCoordinator.swift
+//  OnboardingCoordinator.swift
 //  CoordinatorPattern
 //
-//  Created by 이성민 on 3/12/24.
+//  Created by 이성민 on 3/13/24.
 //
 
 import UIKit
 
-protocol FirstCoordinatorType {
-    func toThird()
+protocol OnboardingCoordinatorType: CoordinatorType {
+    func toTabBar()
 }
 
-final class FirstCoordinator: FirstCoordinatorType {
+final class OnboardingCoordinator: OnboardingCoordinatorType {
     
     var navigationController: UINavigationController
     var children: [CoordinatorType] = []
@@ -21,7 +21,7 @@ final class FirstCoordinator: FirstCoordinatorType {
     }
     
     func start() {
-        let onboardingViewController = FirstViewController()
+        let onboardingViewController = OnboardingViewController()
         self.navigationController.viewControllers = [onboardingViewController]
     }
     
@@ -29,8 +29,7 @@ final class FirstCoordinator: FirstCoordinatorType {
         
     }
     
-    func toThird() {
+    func toTabBar() {
         
     }
 }
-
