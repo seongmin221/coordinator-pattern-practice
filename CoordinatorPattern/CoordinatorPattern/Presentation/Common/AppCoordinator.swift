@@ -13,7 +13,7 @@ protocol AppCoordinatorType: CoordinatorType {
 }
 
 final class AppCoordinator: AppCoordinatorType {
-    
+    var finishDelegate: CoordinatorFinishDelegate?
     var navigationController: UINavigationController
     var children: [CoordinatorType] = []
     
