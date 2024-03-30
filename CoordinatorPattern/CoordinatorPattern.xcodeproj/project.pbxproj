@@ -9,14 +9,12 @@
 /* Begin PBXBuildFile section */
 		3E8F24472B9F572000A395B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8F24462B9F572000A395B5 /* AppDelegate.swift */; };
 		3E8F24492B9F572000A395B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8F24482B9F572000A395B5 /* SceneDelegate.swift */; };
-		3E8F244B2B9F572000A395B5 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8F244A2B9F572000A395B5 /* TabBarViewController.swift */; };
 		3E8F24502B9F574000A395B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E8F244F2B9F574000A395B5 /* Assets.xcassets */; };
 		3E8F24532B9F574000A395B5 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 3E8F24522B9F574000A395B5 /* Base */; };
 		3E8F245D2B9F591600A395B5 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8F245C2B9F591600A395B5 /* AppCoordinator.swift */; };
 		3E8F24632B9F595400A395B5 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8F24622B9F595400A395B5 /* FirstViewController.swift */; };
 		3E8F24652B9F595C00A395B5 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8F24642B9F595C00A395B5 /* SecondViewController.swift */; };
 		3E8F24672B9F596000A395B5 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8F24662B9F596000A395B5 /* ThirdViewController.swift */; };
-		3E8F24692B9F5A0600A395B5 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8F24682B9F5A0600A395B5 /* TabBarCoordinator.swift */; };
 		3E8F246B2B9F5A2C00A395B5 /* FirstCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8F246A2B9F5A2C00A395B5 /* FirstCoordinator.swift */; };
 		3E8F246D2B9F5A3400A395B5 /* SecondCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8F246C2B9F5A3400A395B5 /* SecondCoordinator.swift */; };
 		3E8F246F2B9F5A3B00A395B5 /* ThirdCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8F246E2B9F5A3B00A395B5 /* ThirdCoordinator.swift */; };
@@ -34,7 +32,6 @@
 		3E8F24432B9F572000A395B5 /* CoordinatorPattern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoordinatorPattern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E8F24462B9F572000A395B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E8F24482B9F572000A395B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3E8F244A2B9F572000A395B5 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		3E8F244F2B9F574000A395B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E8F24522B9F574000A395B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E8F24542B9F574000A395B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,7 +39,6 @@
 		3E8F24622B9F595400A395B5 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		3E8F24642B9F595C00A395B5 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		3E8F24662B9F596000A395B5 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
-		3E8F24682B9F5A0600A395B5 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		3E8F246A2B9F5A2C00A395B5 /* FirstCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCoordinator.swift; sourceTree = "<group>"; };
 		3E8F246C2B9F5A3400A395B5 /* SecondCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCoordinator.swift; sourceTree = "<group>"; };
 		3E8F246E2B9F5A3B00A395B5 /* ThirdCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdCoordinator.swift; sourceTree = "<group>"; };
@@ -110,7 +106,6 @@
 			children = (
 				3E8F24832BA1C57F00A395B5 /* Common */,
 				3E8F247E2BA1C38000A395B5 /* Onboarding */,
-				3E8F24612B9F594000A395B5 /* TabBar */,
 				3E8F24602B9F593E00A395B5 /* First */,
 				3E8F245F2B9F593B00A395B5 /* Second */,
 				3E8F245E2B9F591A00A395B5 /* Third */,
@@ -146,16 +141,6 @@
 			path = First;
 			sourceTree = "<group>";
 		};
-		3E8F24612B9F594000A395B5 /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
-				3E8F244A2B9F572000A395B5 /* TabBarViewController.swift */,
-				3E8F24682B9F5A0600A395B5 /* TabBarCoordinator.swift */,
-				3EF9F8772BB7DB7F00F3E366 /* Tabs.swift */,
-			);
-			path = TabBar;
-			sourceTree = "<group>";
-		};
 		3E8F24702B9F602000A395B5 /* Fourth */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +170,7 @@
 		3E8F24832BA1C57F00A395B5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				3EF9F8772BB7DB7F00F3E366 /* Tabs.swift */,
 				3E8F245C2B9F591600A395B5 /* AppCoordinator.swift */,
 				3E8F247C2BA1C34300A395B5 /* CoordinatorType.swift */,
 			);
@@ -275,11 +261,9 @@
 				3EF9F8782BB7DB7F00F3E366 /* Tabs.swift in Sources */,
 				3E8F24632B9F595400A395B5 /* FirstViewController.swift in Sources */,
 				3E8F246F2B9F5A3B00A395B5 /* ThirdCoordinator.swift in Sources */,
-				3E8F24692B9F5A0600A395B5 /* TabBarCoordinator.swift in Sources */,
 				3E8F24802BA1C38D00A395B5 /* LaunchScreenViewController.swift in Sources */,
 				3E8F245D2B9F591600A395B5 /* AppCoordinator.swift in Sources */,
 				3E8F246B2B9F5A2C00A395B5 /* FirstCoordinator.swift in Sources */,
-				3E8F244B2B9F572000A395B5 /* TabBarViewController.swift in Sources */,
 				3E8F24672B9F596000A395B5 /* ThirdViewController.swift in Sources */,
 				3E8F24472B9F572000A395B5 /* AppDelegate.swift in Sources */,
 				3E8F24822BA1C39100A395B5 /* LaunchScreenCoordinator.swift in Sources */,

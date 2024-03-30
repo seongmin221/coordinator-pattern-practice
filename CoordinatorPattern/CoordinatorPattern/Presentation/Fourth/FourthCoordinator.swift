@@ -11,7 +11,7 @@ protocol FourthCoordinatorType: CoordinatorType {}
 
 final class FourthCoordinator: FourthCoordinatorType {
     
-    var finishDelegate: CoordinatorFinishDelegate?
+    var parent: ParentCoordinatorDelegate?
     var navigationController: UINavigationController
     var children: [CoordinatorType] = []
     var flowType: CoordinatorFlowType { .first }

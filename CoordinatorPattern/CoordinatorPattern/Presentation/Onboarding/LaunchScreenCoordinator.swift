@@ -12,7 +12,7 @@ protocol LaunchScreenCoordinatorType: CoordinatorType {
 }
 
 final class LaunchScreenCoordinator: LaunchScreenCoordinatorType {
-    weak var finishDelegate: CoordinatorFinishDelegate?
+    weak var parent: ParentCoordinatorDelegate?
     var navigationController: UINavigationController
     var children: [CoordinatorType] = []
     var flowType: CoordinatorFlowType { .onboarding }
@@ -27,6 +27,6 @@ final class LaunchScreenCoordinator: LaunchScreenCoordinatorType {
     }
     
     func toTabBar() {
-        finishDelegate?.didFinish(childCoordinator: self)
+        parent?.finish(child: self)
     }
 }

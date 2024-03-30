@@ -14,7 +14,7 @@ enum CoordinatorFlowType {
 }
 
 protocol CoordinatorType: AnyObject {
-    var finishDelegate: CoordinatorFinishDelegate? { get set }
+    var parent: ParentCoordinatorDelegate? { get set }
     var navigationController: UINavigationController { get }
     var children: [CoordinatorType] { get set }
     var flowType: CoordinatorFlowType { get }
@@ -26,10 +26,10 @@ protocol CoordinatorType: AnyObject {
 extension CoordinatorType {
     func finish() {
         children.removeAll()
-        finishDelegate?.didFinish(childCoordinator: self)
+        parent?.finish(child: self)
     }
 }
 
-protocol CoordinatorFinishDelegate: AnyObject {
-    func didFinish(childCoordinator: CoordinatorType)
+protocol ParentCoordinatorDelegate: AnyObject {
+    func finish(child: CoordinatorType)
 }

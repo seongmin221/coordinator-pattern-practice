@@ -14,7 +14,7 @@ protocol AppCoordinatorType: CoordinatorType {
 
 final class AppCoordinator: AppCoordinatorType {
     
-    weak var finishDelegate: CoordinatorFinishDelegate? = nil
+    weak var parent: ParentCoordinatorDelegate? = nil
     var children: [CoordinatorType] = []
     var flowType: CoordinatorFlowType { .app }
     
@@ -32,7 +32,7 @@ final class AppCoordinator: AppCoordinatorType {
     func showLaunchScreenFlow() {
         let launchScreenCoordinator = LaunchScreenCoordinator(navigationController: self.navigationController)
         launchScreenCoordinator.start()
-        launchScreenCoordinator.finishDelegate = self
+        launchScreenCoordinator.parent = self
         self.children = [launchScreenCoordinator]
     }
     
@@ -48,7 +48,7 @@ final class AppCoordinator: AppCoordinatorType {
         Array(zip(tabs, tabNavigations))
             .map { tab, navigation in makeTabCoordinator(type: tab, from: navigation) }
             .forEach { coordinator in
-                coordinator.finishDelegate = self
+                coordinator.parent = self
                 coordinator.start()
                 children.append(coordinator)
             }
@@ -58,12 +58,12 @@ final class AppCoordinator: AppCoordinatorType {
     }
 }
 
-extension AppCoordinator: CoordinatorFinishDelegate {
-    func didFinish(childCoordinator: CoordinatorType) {
-        children = children.filter { $0.flowType != childCoordinator.flowType }
+extension AppCoordinator: ParentCoordinatorDelegate {
+    func finish(child: CoordinatorType) {
+        children = children.filter { $0.flowType != child.flowType }
         navigationController.viewControllers.removeAll()
         
-        switch childCoordinator.flowType {
+        switch child.flowType {
         case .onboarding:
             showMainFlow()
         default:
