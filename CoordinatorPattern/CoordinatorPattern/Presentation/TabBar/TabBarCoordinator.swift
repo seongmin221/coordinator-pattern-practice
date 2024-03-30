@@ -12,31 +12,7 @@ enum TransitionStyle {
     case modal([UISheetPresentationController.Detent])
 }
 
-enum Tab: Int, RawRepresentable, CaseIterable {
-    case first = 1
-    case second = 2
-    
-    var title: String {
-        switch self {
-        case .first: return "first"
-        case .second: return "second"
-        }
-    }
-    
-    var image: UIImage {
-        switch self {
-        case .first: return .init(systemName: "1.circle")!
-        case .second: return .init(systemName: "2.circle")!
-        }
-    }
-    
-    var selectedImage: UIImage {
-        switch self {
-        case .first: return .init(systemName: "1.circle.fill")!
-        case .second: return .init(systemName: "2.circle.fill")!
-        }
-    }
-}
+
 
 protocol TabBarCoordinatorType: CoordinatorType {
     var tabBarController: UITabBarController { get set }
@@ -45,8 +21,11 @@ protocol TabBarCoordinatorType: CoordinatorType {
 
 final class TabBarCoordinator: TabBarCoordinatorType {
     
-    var navigationController: UINavigationController
+    var finishDelegate: CoordinatorFinishDelegate?
     var children: [CoordinatorType] = []
+    var flowType: CoordinatorFlowType { .tab }
+    
+    var navigationController: UINavigationController
     var tabBarController: UITabBarController
     
     init(navigationController: UINavigationController) {
@@ -55,7 +34,13 @@ final class TabBarCoordinator: TabBarCoordinatorType {
     }
     
     func start() {
+        let tabs: [Tab] = Tab.allCases.sorted(by: { $0.rawValue < $1.rawValue })
+        let navigationControllers: [UINavigationController] = tabs
+            .map { tab in createTabNavigation(with: tab) }
         
+        self.tabBarController.setViewControllers(navigationControllers, animated: false)
+        self.tabBarController.selectedIndex = Tab.first.rawValue
+        self.navigationController.pushViewController(self.tabBarController, animated: false)
     }
     
     func end() {
@@ -68,5 +53,31 @@ final class TabBarCoordinator: TabBarCoordinatorType {
 }
 
 extension TabBarCoordinator {
-    
+    private func createTabNavigation(with tab: Tab) -> UINavigationController {
+        let navigationController = UINavigationController()
+        navigationController.tabBarItem = UITabBarItem(title: tab.title, 
+                                                       image: tab.image,
+                                                       tag: tab.rawValue)
+        
+        switch tab {
+        case .first:
+            let firstCoordinator = FirstCoordinator(navigationController: self.navigationController)
+            firstCoordinator.finishDelegate = self
+            firstCoordinator.start()
+            self.children.append(firstCoordinator)
+        case .second:
+            let secondCoordinator = SecondCoordinator(navigationController: self.navigationController)
+            secondCoordinator.finishDelegate = self
+            secondCoordinator.start()
+            self.children.append(secondCoordinator)
+        }
+        
+        return navigationController
+    }
+}
+
+extension TabBarCoordinator: CoordinatorFinishDelegate {
+    func didFinish(childCoordinator: any CoordinatorType) {
+        
+    }
 }

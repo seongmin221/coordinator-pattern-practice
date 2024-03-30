@@ -7,30 +7,29 @@
 
 import UIKit
 
-protocol FirstCoordinatorType {
+protocol FirstCoordinatorType: CoordinatorType {
     func toThird()
 }
 
 final class FirstCoordinator: FirstCoordinatorType {
     
+    var finishDelegate: CoordinatorFinishDelegate?
     var navigationController: UINavigationController
     var children: [CoordinatorType] = []
+    var flowType: CoordinatorFlowType { .first }
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
     func start() {
-        let onboardingViewController = FirstViewController()
-        self.navigationController.viewControllers = [onboardingViewController]
-    }
-    
-    func end() {
-        
+        let firstViewController = FirstViewController(coordinator: self)
+        self.navigationController.viewControllers = [firstViewController]
     }
     
     func toThird() {
-        
+        let thirdViewController = ThirdViewController()
+        self.navigationController.pushViewController(thirdViewController, animated: true)
     }
 }
 

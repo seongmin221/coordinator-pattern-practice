@@ -8,6 +8,7 @@
 import UIKit
 
 enum CoordinatorFlowType {
+    case app
     case tab, onboarding
     case first, second
 }
@@ -19,7 +20,7 @@ protocol CoordinatorType: AnyObject {
     var flowType: CoordinatorFlowType { get }
     
     func start()
-    func end()
+    func finish()
 }
 
 extension CoordinatorType {
@@ -29,6 +30,6 @@ extension CoordinatorType {
     }
 }
 
-protocol CoordinatorFinishDelegate {
+protocol CoordinatorFinishDelegate: AnyObject {
     func didFinish(childCoordinator: CoordinatorType)
 }

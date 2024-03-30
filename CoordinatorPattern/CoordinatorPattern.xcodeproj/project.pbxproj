@@ -24,8 +24,10 @@
 		3E8F24742B9F603800A395B5 /* FourthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8F24732B9F603800A395B5 /* FourthCoordinator.swift */; };
 		3E8F24772B9F66E200A395B5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3E8F24762B9F66E200A395B5 /* SnapKit */; };
 		3E8F247D2BA1C34300A395B5 /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8F247C2BA1C34300A395B5 /* CoordinatorType.swift */; };
-		3E8F24802BA1C38D00A395B5 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8F247F2BA1C38D00A395B5 /* OnboardingViewController.swift */; };
-		3E8F24822BA1C39100A395B5 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8F24812BA1C39100A395B5 /* OnboardingCoordinator.swift */; };
+		3E8F24802BA1C38D00A395B5 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8F247F2BA1C38D00A395B5 /* LaunchScreenViewController.swift */; };
+		3E8F24822BA1C39100A395B5 /* LaunchScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8F24812BA1C39100A395B5 /* LaunchScreenCoordinator.swift */; };
+		3EF9F8762BB7CFE300F3E366 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF9F8752BB7CFE300F3E366 /* LaunchScreenView.swift */; };
+		3EF9F8782BB7DB7F00F3E366 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF9F8772BB7DB7F00F3E366 /* Tabs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,8 +49,10 @@
 		3E8F24712B9F603000A395B5 /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		3E8F24732B9F603800A395B5 /* FourthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthCoordinator.swift; sourceTree = "<group>"; };
 		3E8F247C2BA1C34300A395B5 /* CoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
-		3E8F247F2BA1C38D00A395B5 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		3E8F24812BA1C39100A395B5 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		3E8F247F2BA1C38D00A395B5 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		3E8F24812BA1C39100A395B5 /* LaunchScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenCoordinator.swift; sourceTree = "<group>"; };
+		3EF9F8752BB7CFE300F3E366 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
+		3EF9F8772BB7DB7F00F3E366 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,7 @@
 			children = (
 				3E8F244A2B9F572000A395B5 /* TabBarViewController.swift */,
 				3E8F24682B9F5A0600A395B5 /* TabBarCoordinator.swift */,
+				3EF9F8772BB7DB7F00F3E366 /* Tabs.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -170,8 +175,9 @@
 		3E8F247E2BA1C38000A395B5 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				3E8F247F2BA1C38D00A395B5 /* OnboardingViewController.swift */,
-				3E8F24812BA1C39100A395B5 /* OnboardingCoordinator.swift */,
+				3E8F247F2BA1C38D00A395B5 /* LaunchScreenViewController.swift */,
+				3E8F24812BA1C39100A395B5 /* LaunchScreenCoordinator.swift */,
+				3EF9F8752BB7CFE300F3E366 /* LaunchScreenView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -265,16 +271,18 @@
 				3E8F24722B9F603000A395B5 /* FourthViewController.swift in Sources */,
 				3E8F24652B9F595C00A395B5 /* SecondViewController.swift in Sources */,
 				3E8F24742B9F603800A395B5 /* FourthCoordinator.swift in Sources */,
+				3EF9F8762BB7CFE300F3E366 /* LaunchScreenView.swift in Sources */,
+				3EF9F8782BB7DB7F00F3E366 /* Tabs.swift in Sources */,
 				3E8F24632B9F595400A395B5 /* FirstViewController.swift in Sources */,
 				3E8F246F2B9F5A3B00A395B5 /* ThirdCoordinator.swift in Sources */,
 				3E8F24692B9F5A0600A395B5 /* TabBarCoordinator.swift in Sources */,
-				3E8F24802BA1C38D00A395B5 /* OnboardingViewController.swift in Sources */,
+				3E8F24802BA1C38D00A395B5 /* LaunchScreenViewController.swift in Sources */,
 				3E8F245D2B9F591600A395B5 /* AppCoordinator.swift in Sources */,
 				3E8F246B2B9F5A2C00A395B5 /* FirstCoordinator.swift in Sources */,
 				3E8F244B2B9F572000A395B5 /* TabBarViewController.swift in Sources */,
 				3E8F24672B9F596000A395B5 /* ThirdViewController.swift in Sources */,
 				3E8F24472B9F572000A395B5 /* AppDelegate.swift in Sources */,
-				3E8F24822BA1C39100A395B5 /* OnboardingCoordinator.swift in Sources */,
+				3E8F24822BA1C39100A395B5 /* LaunchScreenCoordinator.swift in Sources */,
 				3E8F246D2B9F5A3400A395B5 /* SecondCoordinator.swift in Sources */,
 				3E8F24492B9F572000A395B5 /* SceneDelegate.swift in Sources */,
 			);
